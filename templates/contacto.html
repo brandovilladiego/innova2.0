@@ -1,0 +1,66 @@
+{% extends 'base/base_publico.html' %}
+
+{% block contenido_pagina %}
+    {% load static %}
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <div class="container">
+
+       <form method="post" action="{% url 'contacto' %}">
+
+           {% csrf_token %}
+           {{ form.as_p }}
+           <div class="row">
+                <div class="col-sm-4">
+                <h2>Contáctanos!</h2>
+                <hr>
+                <address>
+                <strong>Email:</strong> <a href="mailto:#"> cartagena@unad.edu.co</a><br><br>
+                <strong>Teléfono:</strong> ( +57 5 ) 6628812
+
+                </address>
+                </div>
+
+                <div class="col-sm-8 contact-form">
+                <form id="contact" method="post" class="form" role="form">
+                <div class="row">
+                <div class="col-xs-6 col-md-6 form-group">
+                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
+                </div>
+                <div class="col-xs-6 col-md-6 form-group">
+                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+                </div>
+                </div>
+                <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+                <br />
+                <div class="row">
+                <div class="col-xs-12 col-md-12 form-group">
+
+
+
+
+                <button class="btn btn-primary pull-right" type="submit">Submit</button>
+                </form>
+                </div>
+       </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

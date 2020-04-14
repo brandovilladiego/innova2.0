@@ -1,0 +1,64 @@
+{% extends 'base/base_publico.html' %}
+{% load static %}
+{% block contenido_pagina %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <center>
+      <h3>Lista de Eventos </h3>  
+    </center> 
+<section id="team" class="pb-5 bg-grey section"  data-ix="fade-in-bottom-scroll" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 300ms ease 0s, transform 300ms ease 0s;">
+
+<div class="container " >
+  <div class="row">
+
+    {% for events in lista_eventos %}
+    
+    <div class="w-dyn-list">
+      <div class="news-teaser-wrapper w-clearfix w-dyn-items w-row">
+        <div class="news-teaser-list-wrapper w-col w-col-4 w-dyn-item">
+          <div class="news-teaser-item">
+            <span
+              class="teaser-wrapper w-inline-block"
+              href="/news/patients-and-doctors">
+              <div class="teaser-image-wrapper">
+                <img class="teaser-image-wrapper" src="{%  static  'media/'  %}{{events.fotos}}"
+                alt="Card image cap">  
+              <div class="teaser-content-wrapper">
+                <h3 class="teaser-headline2">{{ events.nombre }}</h3>
+                <div class="news-teaser-information-wrapper w-clearfix"></div>
+                  <div class="news-teaser-information-item">
+                    <strong>Lugar:</strong> {{ events.lugar }}
+                <div class="news-teaser-information-wrapper w-clearfix"></div>
+                  <div class="news-teaser-information-item">
+                    <strong>Tipo:</strong> {{ events.tipo }}
+                  </div>
+                <div class="news-teaser-information-wrapper w-clearfix"></div>
+                  <div class="news-teaser-information-item">
+                    <strong>Fecha:</strong> {{ events.fecha_creacion }}
+                  </div>
+                  <div class="news-teaser-information-wrapper w-clearfix"></div>
+                  <div class="news-teaser-information-item">
+                    
+                  </div>
+              </div>
+              
+              
+
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% endfor %}
+  </div>
+  <div>
+    <div>
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}
+
